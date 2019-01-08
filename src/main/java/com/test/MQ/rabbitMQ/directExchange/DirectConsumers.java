@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.util.concurrent.TimeoutException;
 
 /**
- * @Description：
+ * @Description：消费者
  * @Author: lenho
  * @Date：2018/9/13 11:23
  */

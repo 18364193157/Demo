@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.util.concurrent.TimeoutException;
 
 /**
- * @Description：
+ * @Description： 生产者
  * @Author: lenho
  * @Date：2018/9/13 10:21
  */
