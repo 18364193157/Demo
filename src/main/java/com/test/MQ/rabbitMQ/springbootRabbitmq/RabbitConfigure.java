@@ -210,7 +210,7 @@ public class RabbitConfigure {
             @Override
             public void onMessage(Message message, Channel channel) throws Exception {
                 /**通过basic.qos方法设置prefetch_count=1，这样RabbitMQ就会使得每个Consumer在同一个时间点最多处理一个Message，
-                 换句话说,在接收到该Consumer的ack前,它不会将新的Message分发给它 */
+                 换句话说,在接收到该Consumer的對这条消息的ack前,它不会将新的Message分发给它,可以用于流量控制 */
                 channel.basicQos(1);
                 byte[] body = message.getBody();
                 log.info("接收处理队列A当中的消息:" + new String(body));

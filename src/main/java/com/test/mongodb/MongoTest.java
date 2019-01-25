@@ -8,6 +8,7 @@ import com.mongodb.client.model.Filters;
 import org.bson.Document;
 
 import java.util.Arrays;
+import java.util.List;
 
 import static com.mongodb.client.model.Filters.eq;
 
@@ -18,26 +19,26 @@ import static com.mongodb.client.model.Filters.eq;
  */
 public class MongoTest {
     public static void main(String[] args) {
-        MongoClient mongoClient = MongoClients.create(
-                MongoClientSettings.builder()
-                .applyConnectionString(new ConnectionString("mongodb://192.168.232.128:27017")).
-                        build());
-        MongoDatabase test = mongoClient.getDatabase("mydb");
-//        test.createCollection("member");
-        MongoCollection<Document> collection = test.getCollection("member");
-        Document doc = new Document("name", "MongoDB")
-                .append("type", "database")
-                .append("count", 1)
-                .append("versions", Arrays.asList("v3.2", "v3.0", "v2.6"))
-                .append("info", new Document("x", 203).append("y", 102));
-//        collection.insertOne(doc);
-        FindIterable<Document> documents = collection.find(Filters.eq("name", "MongoDB"));
-        documents.forEach(new Block<Document>() {
-            @Override
-            public void apply(Document document) {
-                System.out.println(document.toJson());
-            }
-        });
+//        MongoClient mongoClient = MongoClients.create(
+//                MongoClientSettings.builder()
+//                .applyConnectionString(new ConnectionString("mongodb://192.168.232.128:27017")).
+//                        build());
+//        MongoDatabase test = mongoClient.getDatabase("mydb");
+////        test.createCollection("member");
+//        MongoCollection<Document> collection = test.getCollection("member");
+//        Document doc = new Document("name", "MongoDB")
+//                .append("type", "database")
+//                .append("count", 1)
+//                .append("versions", Arrays.asList("v3.2", "v3.0", "v2.6"))
+//                .append("info", new Document("x", 203).append("y", 102));
+////        collection.insertOne(doc);
+//        FindIterable<Document> documents = collection.find(Filters.eq("name", "MongoDB"));
+//        documents.forEach(new Block<Document>() {
+//            @Override
+//            public void apply(Document document) {
+//                System.out.println(document.toJson());
+//            }
+//        });
 //        ListCollectionsIterable<Document> documents = test.listCollections();
 //        MongoCursor<Document> iterator = documents.iterator();
 //        while (iterator.hasNext()) {

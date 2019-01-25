@@ -7,7 +7,8 @@ import org.springframework.stereotype.Component;
 
 /**
  * @Description：消息失败回调
- *通过实现 ReturnCallback 接口，启动消息失败返回，比如路由不到队列时触发回调
+ * 通过实现 ReturnCallback 接口，启动消息失败返回，比如路由不到队列时触发回调
+ * 同時可以使用备份交换机
  * @Author: lenho
  * @Date：2018/9/14 15:52
  */
