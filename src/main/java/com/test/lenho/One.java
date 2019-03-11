@@ -15,6 +15,25 @@ import java.util.*;
 @Slf4j
 public class One {
     public static void main(String[] args) {
+        City city = new City();
+        List<CityCopy> cityCopies = new ArrayList<>();
+        CityCopy cityCopy = new CityCopy();
+        cityCopy.setName("杭州");
+        cityCopy.setSize(true);
+
+        CityCopy cityCopy1 = new CityCopy();
+        cityCopy1.setName("绍兴");
+        cityCopy1.setSize(true);
+//        List<Cone> cones = new ArrayList<>();
+//        Cone cone = new Cone("小明",10);
+//        cones.add(cone);
+//        cityCopy.setConeList(cones);
+        cityCopies.add(cityCopy1);
+        cityCopies.add(cityCopy);
+        System.out.println(JSON.toJSONString(cityCopies));
+//        city.setCityCopies(cityCopies);
+
+//        System.out.println(JSON.toJSONString(city));
 //        List<String> list1 =new ArrayList<String>();
 //        list1.add("1C2");
 //        list1.add("6A1");

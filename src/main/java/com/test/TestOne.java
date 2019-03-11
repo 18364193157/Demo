@@ -1,5 +1,7 @@
 package com.test;
 
+import java.util.Optional;
+
 /**
  * 描述:
  *
@@ -16,6 +18,9 @@ public class TestOne {
     public TestOne() {
         String num = "456";
         String result = "===";
+
+        String s = Optional.ofNullable(num).orElse("");
+        System.out.println("s: " + s);
 //        if(Integer.valueOf(num).equals(123)){
 //            keyWordExecutor = new KeyWordExecutor.ExecutorNum();
 //        }else if(num.equals("456")){
@@ -23,8 +28,8 @@ public class TestOne {
 //        }else if(num.equals("789")){
 //            keyWordExecutor = new KeyWordExecutor.ExecutorChinese();
 //        }
-        KeyWordExecutor executor = ExecutorFactory.getExecutor(num);
-        executor.process(result);
+//        KeyWordExecutor executor = ExecutorFactory.getExecutor(num);
+//        executor.process(result);
     }
 
     public static void main(String[] args) {

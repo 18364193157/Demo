@@ -3,6 +3,8 @@ package com.test.lenho;
 import lombok.Data;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @Author: lenho
@@ -31,5 +33,8 @@ public class City implements Serializable{
     private Boolean size;
 
     private boolean aBoolean;
+
+    private List<CityCopy> cityCopies = new ArrayList<>();
+
 
 }
