@@ -21,8 +21,8 @@ public class ClientSample {
 //        CanalConnector connectorCluster = CanalConnectors.newClusterConnector("10.105.10.123:2181,10.105.10.124:2181,10.105.10.125:2181","example", "", "");
         // 创建链接
         CanalConnector connector = CanalConnectors.newSingleConnector(
-                new InetSocketAddress("192.168.10.33", 11111), "example", "",
-                "");// AddressUtils.getHostIp(),
+                new InetSocketAddress("192.168.10.22", 11111), "example", "canal",
+                "canal");// AddressUtils.getHostIp(),
         int batchSize = 1000;
         int emptyCount = 0;
         try {

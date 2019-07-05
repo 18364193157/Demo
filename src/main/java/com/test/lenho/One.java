@@ -1,36 +1,144 @@
 package com.test.lenho;
 
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import jdk.nashorn.internal.runtime.JSONFunctions;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.BeanUtils;
 
 import java.math.BigDecimal;
 import java.text.DecimalFormat;
 import java.util.*;
+import java.util.stream.Collectors;
 
 /**
  * Created by lenho on 2018/6/12.
  */
-@Slf4j
+//@Slf4j
 public class One {
     public static void main(String[] args) {
-        City city = new City();
-        List<CityCopy> cityCopies = new ArrayList<>();
-        CityCopy cityCopy = new CityCopy();
-        cityCopy.setName("杭州");
-        cityCopy.setSize(true);
+//        List<Integer> list=new ArrayList<>();
+//        list.add(1);
+//        list.add(2);
+//        list.add(4);
+//        list.add(3);
+//        System.out.println(list);
 
-        CityCopy cityCopy1 = new CityCopy();
-        cityCopy1.setName("绍兴");
-        cityCopy1.setSize(true);
+//        String json = "{\"规1\":\"活动1\",\"规2\":\"10个库存\"}";
+//        LinkedHashMap map = JSONObject.parseObject(json, LinkedHashMap.class);
+//        if (null != map && !map.isEmpty()) {
+//            Set keys = map.keySet();
+//            Collection values = map.values();
+//            String join = String.join("/", values);
+//            System.out.println(join);
+//        }
+        List<Student> list = new ArrayList<Student>();
+        list.add(new Student(1, "Mahesh", 12));
+        list.add(new Student(2, "Suresh", 15));
+        list.add(new Student(3, "Nilesh", 10));
+        List<Student> slist = list.stream().sorted(Comparator.comparing(Student::getAge)).collect(Collectors.toList());
+        slist.forEach(e -> System.out.println("Id:"+ e.getId()+", Name: "+e.getName()+", Age:"+e.getAge()));
+
+//        String join = StringUtils.join(hashSet, ",");
+//        System.out.println(join);
+//        List<Integer> list2 = Arrays.asList(1,2,3,4);
+//        HashSet h1 = new HashSet(list1);
+//        HashSet h2 = new HashSet(list2);
+//        h1.removeAll(h2);
+//        list.addAll(h1);
+//        System.out.println(list);
+
+
+
+//        System.out.println(list2);
+
+//
+//        for (Integer i : list) {
+//
+//        }
+
+//        Iterator<Integer> iterator = list.iterator();
+//        while (iterator.hasNext()){
+//            if(list2.contains(iterator.next())){
+//                iterator.remove();
+//            }
+//        }
+//        System.out.println(list2);
+//
+////        String s = "中华  人民";
+//        System.out.println(StringUtils.deleteWhitespace(s).contains("华人"));
+//        System.out.println(s.contains("1231"));
+//        BigDecimal b  = new BigDecimal(100.71+"");
+//        BigDecimal multiply = b.subtract(new BigDecimal(0.0072+""));
+//        System.out.println(multiply);
+//        System.out.println(multiply.setScale(2,BigDecimal.ROUND_HALF_DOWN));
+//        int i = b.compareTo(new BigDecimal(100.99));
+//        System.out.println(i);
+//        BigDecimal handFee = new BigDecimal(2).multiply(new BigDecimal(0.0025 + ""));
+//        System.out.println(handFee.compareTo(new BigDecimal(0.005+"")));
+
+//        List<Integer> list = Arrays.asList(1, 2, 3, 4);
+//        System.out.println(JSON.toJSONString(list));
+//        for (Integer integer: list) {
+//            integer++;
+//        ReqBargainGoods reqBargainGoods = new ReqBargainGoods();
+//        reqBargainGoods.setBarCode("123");
+//        List<BargainGoodsDTO> list = new ArrayList<>();
+//        BargainGoodsDTO bargainGoodsDTO = new BargainGoodsDTO();
+//        bargainGoodsDTO.setBargainStart("2019-06-05 02:56:55");
+//        bargainGoodsDTO.setBargainEnd("2019-06-06 02:56:55");
+//        bargainGoodsDTO.setBargainPrice(new BigDecimal(12));
+//        bargainGoodsDTO.setMemberPrice(new BigDecimal(14));
+//        bargainGoodsDTO.setRetailPrice(new BigDecimal(15));
+//        bargainGoodsDTO.setBargainStock(2);
+//        bargainGoodsDTO.setMaxNumber(2);
+//        List<Long> mutex = new ArrayList<>();
+//        mutex.add(3014796493212565528L);
+//        mutex.add(3065304965016420562L);
+//        bargainGoodsDTO.setMutexSpu(mutex);
+//        bargainGoodsDTO.setSaleScene(1);
+//        bargainGoodsDTO.setSpuId(3030222160313982988L);
+//        bargainGoodsDTO.setSkuId(3030222160313982990L);
+//        list.add(bargainGoodsDTO);
+//
+//
+//        BargainGoodsDTO bargainGoodsDTO2 = new BargainGoodsDTO();
+//        bargainGoodsDTO2.setBargainStart("2019-06-04 02:56:55");
+//        bargainGoodsDTO2.setBargainEnd("2019-06-05 02:56:55");
+//        bargainGoodsDTO2.setBargainPrice(new BigDecimal(10));
+//        bargainGoodsDTO2.setMemberPrice(new BigDecimal(11));
+//        bargainGoodsDTO2.setRetailPrice(new BigDecimal(13));
+//        bargainGoodsDTO2.setBargainStock(2);
+//        bargainGoodsDTO2.setMaxNumber(2);
+//        bargainGoodsDTO2.setMutexSpu(mutex);
+//        bargainGoodsDTO2.setSaleScene(1);
+//        bargainGoodsDTO2.setSpuId(3030222160313982988L);
+//        bargainGoodsDTO2.setSkuId(3030222160313982990L);
+//        list.add(bargainGoodsDTO2);
+//        reqBargainGoods.setList(list);
+//        System.out.println(JSON.toJSONString(list));
+//        reqBargainGoods.setList(list);
+
+//        System.out.println(JSON.toJSONString(reqBargainGoods));
+//            System.out.println(integer);
+//        }
+//        City city = new City();
+//        List<CityCopy> cityCopies = new ArrayList<>();
+//        CityCopy cityCopy = new CityCopy();
+//        cityCopy.setName("杭州");
+//        cityCopy.setSize(true);
+//
+//        CityCopy cityCopy1 = new CityCopy();
+//        cityCopy1.setName("绍兴");
+//        cityCopy1.setSize(true);
 //        List<Cone> cones = new ArrayList<>();
 //        Cone cone = new Cone("小明",10);
 //        cones.add(cone);
 //        cityCopy.setConeList(cones);
-        cityCopies.add(cityCopy1);
-        cityCopies.add(cityCopy);
-        System.out.println(JSON.toJSONString(cityCopies));
+//        cityCopies.add(cityCopy1);
+//        cityCopies.add(cityCopy);
+//        System.out.println(JSON.toJSONString(cityCopies));
 //        city.setCityCopies(cityCopies);
 
 //        System.out.println(JSON.toJSONString(city));
@@ -178,5 +286,6 @@ public class One {
 //        pageUtil.setPageSize(5);
 //        pageUtil.setAllContent(content);
 //        System.out.println(pageUtil.getCurrentContent());
+
     }
 }

@@ -38,7 +38,7 @@ public class MsgProducer implements RabbitTemplate.ConfirmCallback{
         //把消息放入ROUTINGKEY_A对应的队列当中去，对应的是队列A
         rabbitTemplate.convertAndSend(RabbitConfigure.EXCHANGE_A,RabbitConfigure.ROUTINGKEY_A,content,message -> {
             MessageProperties properties = message.getMessageProperties();
-            properties.setExpiration(expiration);
+//            properties.setExpiration(expiration);
             properties.setCorrelationId(correlationId.getId()); //生产者指定
             return message;
         });
