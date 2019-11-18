@@ -20,12 +20,12 @@ public class TestOne {
     }
 
     public TestOne() {
-        String num = "asdf.ASD";
-        String s = "asfas.ASD";
-        String s1 = "safd.SDD";
-        List<String> list = Arrays.asList("asdf.asd", "asfas.asd", "safd.sdd");
-        List<String> asd = list.stream().filter(o -> o.endsWith(".asd".toLowerCase())).collect(Collectors.toList());
-        System.out.println(asd);
+//        String num = "asdf.ASD";
+//        String s = "asfas.ASD";
+//        String s1 = "safd.SDD";
+//        List<String> list = Arrays.asList("asdf.asd", "asfas.asd", "safd.sdd");
+//        List<String> asd = list.stream().filter(o -> o.endsWith(".asd".toLowerCase())).collect(Collectors.toList());
+//        System.out.println(asd);
 //        String result = "===";
 //
 //        String s = Optional.ofNullable(num).orElse("");

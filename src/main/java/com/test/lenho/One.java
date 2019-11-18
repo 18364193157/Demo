@@ -17,6 +17,19 @@ import java.util.stream.Collectors;
  */
 //@Slf4j
 public class One {
+
+
+    public static   void  tes(Iterator iterator){
+        if(iterator.hasNext()){
+            Object next = iterator.next();
+            System.out.println(next);
+        }
+        if(iterator.hasNext()){
+            Object next = iterator.next();
+            tes(iterator);
+        }
+    }
+
     public static void main(String[] args) {
 //        List<Integer> list=new ArrayList<>();
 //        list.add(1);
@@ -37,8 +50,11 @@ public class One {
         list.add(new Student(1, "Mahesh", 12));
         list.add(new Student(2, "Suresh", 15));
         list.add(new Student(3, "Nilesh", 10));
-        List<Student> slist = list.stream().sorted(Comparator.comparing(Student::getAge)).collect(Collectors.toList());
-        slist.forEach(e -> System.out.println("Id:"+ e.getId()+", Name: "+e.getName()+", Age:"+e.getAge()));
+
+        Iterator<Student> iterator = list.iterator();
+        tes(iterator);
+//        List<Student> slist = list.stream().sorted(Comparator.comparing(Student::getAge)).collect(Collectors.toList());
+//        slist.forEach(e -> System.out.println("Id:"+ e.getId()+", Name: "+e.getName()+", Age:"+e.getAge()));
 
 //        String join = StringUtils.join(hashSet, ",");
 //        System.out.println(join);

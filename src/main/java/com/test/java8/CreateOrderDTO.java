@@ -5,6 +5,10 @@ import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 描述:
@@ -38,13 +42,37 @@ public class CreateOrderDTO implements Serializable {
     private Integer orderSource;
 
     public static void main(String[] args) {
-        CreateOrderDTO createOrderDTO = new CreateOrderDTO();
-        createOrderDTO.setOrderId("119120110");
-        createOrderDTO.setOrderAmount("0.02");
-        createOrderDTO.setGoodsParamExt("{\"name\":\"aasjdfkaj\"}");
-        createOrderDTO.setOrderSource(0);
-        createOrderDTO.setStoreId(18L);
+//        CreateOrderDTO createOrderDTO = new CreateOrderDTO();
+//        createOrderDTO.setOrderId("119120110");
+//        createOrderDTO.setOrderAmount("0.02");
+//        createOrderDTO.setGoodsParamExt("{\"name\":\"aasjdfkaj\"}");
+//        createOrderDTO.setOrderSource(0);
+//        createOrderDTO.setStoreId(18L);
+//
+//        System.out.println(JSON.toJSONString(createOrderDTO));
+//        String s = "2,3,";
+//        BigDecimal bigDecimal = new BigDecimal(String.valueOf(148000L));
+//        BigDecimal bigDecimal1 = new BigDecimal(String.valueOf(190L));
+//        BigDecimal bigDecimal2 = bigDecimal.divide(bigDecimal1,0,RoundingMode.HALF_UP);
+//        System.out.println(bigDecimal2.longValue());
 
-        System.out.println(JSON.toJSONString(createOrderDTO));
+//        List<Long> list = new ArrayList<>();
+//        list.add(1L);
+//        list.add(2L);
+//        list.add(3L);
+//        StringBuilder stringBuilder = new StringBuilder();
+//        list.forEach(e ->{
+//            stringBuilder.append(String.valueOf(e)).append("  ");
+//        });
+//        System.out.println(stringBuilder.toString());
+//
+//        System.out.println();
+//        System.out.println(" ".equals(" "));
+//        System.out.println(s.contains("3"));
+        String s = "23.0";
+        System.out.println(s.equals(null));
+//        int length = s.length();
+//        s = s.substring(0,length-2);
+//        System.out.println(s);
     }
 }
