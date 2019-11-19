@@ -8,7 +8,7 @@ import java.util.concurrent.TimeUnit;
  * @Date：2018/12/13 10:42
  */
 public class VisableDemo {
-    private volatile static boolean stop = false;
+    private static volatile boolean stop = false;
     public static void main(String[] args) throws InterruptedException {
         Thread thread = new Thread(() ->{
             int i = 0;

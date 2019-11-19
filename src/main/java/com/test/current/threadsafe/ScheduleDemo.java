@@ -1,5 +1,7 @@
 package com.test.current.threadsafe;
 
+import lombok.extern.slf4j.Slf4j;
+
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
@@ -10,6 +12,7 @@ import java.util.concurrent.TimeUnit;
  * @author langyonghe
  * @create 2019-03-07 9:26
  */
+@Slf4j
 public class ScheduleDemo {
 
     public static void main(String[] args) {
@@ -24,5 +27,9 @@ public class ScheduleDemo {
             }
         },0,2, TimeUnit.SECONDS);
 
+        Runtime.getRuntime().addShutdownHook(new Thread(() -> {
+            System.out.println("==================");
+            ses.shutdown();
+        }));
     }
 }
