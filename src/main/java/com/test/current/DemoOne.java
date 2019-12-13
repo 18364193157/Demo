@@ -9,10 +9,8 @@ import redis.clients.jedis.Response;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.UUID;
+import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * @Description：
@@ -32,6 +30,9 @@ public class DemoOne {
     }
 
     public static void main(String[] args) {
+        Integer a = null;
+        Integer integer = Optional.ofNullable(a).orElse(0);
+        System.out.println(integer);
 //        RequestDemo requestDemo = new RequestDemo();
 //        requestDemo.setName("lenho");
 //        DemoOne demoOne = new DemoOne();
@@ -54,6 +55,15 @@ public class DemoOne {
 //        System.out.println(s3);
 //        System.out.println(s4);
 //        System.out.println();
+//        ConcurrentHashMap<Object, Object> map = new ConcurrentHashMap<>();
+//        map.put("key",123);
+//        map.put("key1",456);
+//        Object key = map.putIfAbsent("key1", 123);
+//        System.out.println(key);
+//
+//        System.out.println(map.get("key1"));
+
+
 //
 //        UUID uuid = UUID.randomUUID();
 //        System.out.println(StringUtils.deleteWhitespace(uuid.toString()).substring(0,8));
@@ -64,11 +74,11 @@ public class DemoOne {
 //        String key = String.format("hist:%s:%s", 3051243, "page_view");
 //        System.out.println(key);
 
-        JedisPool jedisPool = new JedisPool("localhost", 6379);
-        Jedis jedis = jedisPool.getResource();
-        for(int i=0;i<20;i++) {
-            System.out.println(isActionAllowed(jedis,"laoqian", "reply", 60, 5));
-        }
+//        JedisPool jedisPool = new JedisPool("localhost", 6379);
+//        Jedis jedis = jedisPool.getResource();
+//        for(int i=0;i<20;i++) {
+//            System.out.println(isActionAllowed(jedis,"laoqian", "reply", 60, 5));
+//        }
     }
 
     public static boolean isActionAllowed(Jedis jedis, String userId, String actionKey, int period, int maxCount) {

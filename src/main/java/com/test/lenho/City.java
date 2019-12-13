@@ -7,6 +7,7 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -21,25 +22,27 @@ public class City implements Serializable{
 //
     private List<Integer> numList;
 //
-//    private Long age;
-//
-//    private Double aDouble;
-//
-//    private double aDoubleDouble;
-//
-//    private long aLong;
-//
-//    private Integer history;
-//
-//    private int anInt;
-//
-//    private Boolean size;
-//
-//    private boolean aBoolean;
-//
-//    private List<CityCopy> cityCopies = new ArrayList<>();
-//
-//    private String json;
+    private Long age;
+
+    private Date time;
+
+    private Double aDouble;
+
+    private double aDoubleDouble;
+
+    private long aLong;
+
+    private Integer history;
+
+    private int anInt;
+
+    private Boolean size;
+
+    private boolean aBoolean;
+
+    private List<CityCopy> cityCopies = new ArrayList<>();
+
+    private String json;
 
     public static void main(String[] args) {
 //        City city = new City();

@@ -1,6 +1,7 @@
 package com.test;
 
 import java.io.File;
+import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
@@ -39,6 +40,11 @@ public class TestOne {
 //        }
 //        KeyWordExecutor executor = ExecutorFactory.getExecutor(num);
 //        executor.process(result);
+
+//        BigDecimal bigDecimal = new BigDecimal("165.505").multiply(new BigDecimal("100")).setScale(0, BigDecimal.ROUND_HALF_UP);
+//        System.out.println(bigDecimal.longValue());
+        Long aLong = Long.valueOf("012312");
+        System.out.println(aLong);
     }
 
     public static void main(String[] args) {
