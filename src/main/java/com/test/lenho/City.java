@@ -24,6 +24,8 @@ public class City implements Serializable{
 //
     private Long age;
 
+    private Long id;
+
     private Date time;
 
     private Double aDouble;

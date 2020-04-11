@@ -2,6 +2,7 @@ package com.test.lenho;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
+import com.google.common.collect.Lists;
 import jdk.nashorn.internal.runtime.JSONFunctions;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang.StringUtils;
@@ -19,16 +20,16 @@ import java.util.stream.Collectors;
 public class One {
 
 
-    public static   void  tes(Iterator iterator){
-        if(iterator.hasNext()){
-            Object next = iterator.next();
-            System.out.println(next);
-        }
-        if(iterator.hasNext()){
-            Object next = iterator.next();
-            tes(iterator);
-        }
-    }
+//    public static   void  tes(Iterator iterator){
+//        if(iterator.hasNext()){
+//            Object next = iterator.next();
+//            System.out.println(next);
+//        }
+//        if(iterator.hasNext()){
+//            Object next = iterator.next();
+//            tes(iterator);
+//        }
+//    }
 
     public static void main(String[] args) {
 //        List<Integer> list=new ArrayList<>();
@@ -46,13 +47,13 @@ public class One {
 //            String join = String.join("/", values);
 //            System.out.println(join);
 //        }
-        List<Student> list = new ArrayList<Student>();
-        list.add(new Student(1, "Mahesh", 12));
-        list.add(new Student(2, "Suresh", 15));
-        list.add(new Student(3, "Nilesh", 10));
-
-        Iterator<Student> iterator = list.iterator();
-        tes(iterator);
+//        List<Student> list = new ArrayList<Student>();
+//        list.add(new Student(1, "Mahesh", 12));
+//        list.add(new Student(2, "Suresh", 15));
+//        list.add(new Student(3, "Nilesh", 10));
+//
+//        Iterator<Student> iterator = list.iterator();
+//        tes(iterator);
 //        List<Student> slist = list.stream().sorted(Comparator.comparing(Student::getAge)).collect(Collectors.toList());
 //        slist.forEach(e -> System.out.println("Id:"+ e.getId()+", Name: "+e.getName()+", Age:"+e.getAge()));
 
@@ -68,6 +69,12 @@ public class One {
 
 
 //        System.out.println(list2);
+
+//        List<Long> a = Lists.newArrayList(1L,2L);
+//        List<Long> b = Lists.newArrayList(2L);
+//        a.removeAll(b);
+//        System.out.println(a);
+
 
 //
 //        for (Integer i : list) {
@@ -144,10 +151,20 @@ public class One {
 //        CityCopy cityCopy = new CityCopy();
 //        cityCopy.setName("杭州");
 //        cityCopy.setSize(true);
-//
+//        cityCopies.add(cityCopy);
+////
 //        CityCopy cityCopy1 = new CityCopy();
 //        cityCopy1.setName("绍兴");
-//        cityCopy1.setSize(true);
+//        cityCopy1.setSize(null);
+//        cityCopies.add(cityCopy1);
+//        Map<Boolean, List<CityCopy>> collect = cityCopies.stream().collect(Collectors.groupingBy(CityCopy::getSize));
+
+        List<String> stringList = new ArrayList();
+        stringList.add("http://img.mockuai.com/images/201601/06/10/20160106101708186.jpg");
+        stringList.add("http://img.mockuai.com/images/201601/06/10/20160106101708869.jpg");
+        stringList.add("http://img.mockuai.com/images/201603/17/19/20160317190713949.png@0e_200w_200h_90Q.png");
+        System.out.println(JSON.toJSONString(stringList));
+
 //        List<Cone> cones = new ArrayList<>();
 //        Cone cone = new Cone("小明",10);
 //        cones.add(cone);
