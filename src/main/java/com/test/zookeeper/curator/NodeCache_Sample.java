@@ -19,7 +19,7 @@ public class NodeCache_Sample {
     static RetryPolicy retryPolicy = new ExponentialBackoffRetry(1000,3);
     //创建连接
     static CuratorFramework client = CuratorFrameworkFactory.builder()
-            .connectString("192.168.232.128:2181")
+            .connectString("192.168.130.11:2181,192.168.130.13:2181,192.168.130.13:2181")
             .sessionTimeoutMs(5000)
             .connectionTimeoutMs(3000)
             .retryPolicy(retryPolicy)

@@ -1,11 +1,17 @@
 package com.test;
 
+import com.alibaba.fastjson.JSONObject;
+import jdk.nashorn.internal.ir.debug.ObjectSizeCalculator;
+import org.openjdk.jol.info.ClassLayout;
+
 import java.io.File;
 import java.math.BigDecimal;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Optional;
+import java.security.Timestamp;
+import java.util.*;
 import java.util.stream.Collectors;
+
+import static java.lang.System.currentTimeMillis;
+import static java.lang.System.setOut;
 
 /**
  * 描述:
@@ -21,6 +27,9 @@ public class TestOne {
     }
 
     public TestOne() {
+
+
+
 //        String num = "asdf.ASD";
 //        String s = "asfas.ASD";
 //        String s1 = "safd.SDD";
@@ -48,6 +57,36 @@ public class TestOne {
     }
 
     public static void main(String[] args) {
-       TestOne testOne = new TestOne();
+//       TestOne testOne = new TestOne();
+//        String s = "123";
+//        try{
+//            JSONObject jsonObject = JSONObject.parseObject("1231");
+//        }catch (Exception e){
+//            e.printStackTrace();
+//        }
+//        Map<String,Object> mn = new HashMap<>();
+//        String[] split = ((String) mn.get("123")).split(".");
+//        System.out.println(split);
+        System.out.println("Integer: " + ObjectSizeCalculator.getObjectSize(Integer.valueOf(122)));
+        System.out.println("Long: " + ObjectSizeCalculator.getObjectSize(Long.valueOf(122L)));
+        System.out.println("Double: " + ObjectSizeCalculator.getObjectSize(Double.valueOf(122.22)));
+        System.out.println("Float: " + ObjectSizeCalculator.getObjectSize(Float.valueOf(122.22f)));
+        System.out.println("Boolean: " + ObjectSizeCalculator.getObjectSize(Boolean.valueOf(false)));
+        System.out.println("Character: " + ObjectSizeCalculator.getObjectSize(Character.valueOf('a')));
+        System.out.println("Short: " + ObjectSizeCalculator.getObjectSize(Short.valueOf("1")));
+        System.out.println("Byte: " + ObjectSizeCalculator.getObjectSize(Byte.valueOf("1")));
+        System.out.println("Date: " + ObjectSizeCalculator.getObjectSize(new Date()));
+
+        Map<String, Object> map = new HashMap<>();
+        map.put("11", 11);
+        map.put("22", "22");
+        map.put("33", 33L);
+        map.put("44", 44.44);
+        System.out.println("Map: " + ObjectSizeCalculator.getObjectSize(map));
+        System.out.println("=============================================");
+        System.out.println(ClassLayout.parseInstance(Integer.valueOf(122)).toPrintable());
+        System.out.println("=============================================");
+        System.out.println(ClassLayout.parseInstance(new Integer(1)).toPrintable());
+
     }
 }
